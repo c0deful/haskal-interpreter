@@ -1,0 +1,77 @@
+comment "//" ;
+comment "/*" "*/" ;
+
+BoolT.	Boolean ::= "True" ;
+BoolF.	Boolean ::= "False" ;
+
+-- EXPRESSIONS
+
+EEq.    Exp ::= Exp "==" Exp ;
+ENeq.   Exp ::= Exp "!=" Exp ;
+ELsr.   Exp ::= Exp "<" Exp ;
+EGtr.   Exp ::= Exp ">" Exp ;
+ELeq.   Exp ::= Exp "<=" Exp ;
+EGeq.   Exp ::= Exp ">=" Exp ;
+
+EAdd.   Exp1 ::= Exp1 "+" Exp1 ;
+ESub.   Exp1 ::= Exp1 "-" Exp1 ;
+EMul.   Exp2 ::= Exp2 "*" Exp2 ;
+EDiv.   Exp2 ::= Exp2 "/" Exp2 ;
+EInt.   Exp4 ::= Integer ;
+
+EOr.    Exp1 ::= Exp1 "||" Exp1 ;
+EAnd.   Exp2 ::= Exp2 "&&" Exp2 ;
+ENot.   Exp3 ::= "!" Exp3 ;
+EBool.  Exp4 ::= Boolean ;
+
+EVar.   Exp4 ::= Ident ;
+
+coercions Exp 4 ;
+
+
+-- STATEMENTS
+
+separator Stmt ";" ;
+separator Arg "," ;
+
+SIf.	Stmt ::= "if" "(" Exp ")" Stmt ;
+SIfElse.	Stmt ::= "if" "(" Exp ")" Stmt "else" Stmt ;
+SPrint.	Stmt ::= "print" Exp ;
+SWhile.	Stmt ::= "while" "(" Exp ")" Stmt ;
+SAssign. Stmt ::= Ident AssignOp Exp ;
+SIter.	Stmt ::= Ident IterOp ;
+SCompound.	Stmt ::= "{" [Stmt] "}" ;
+SProcCall. Stmt ::=  Ident "(" [Arg] ")" ;
+
+Assign.       AssignOp ::= "=" ;
+AssignMul.    AssignOp ::= "*=" ;
+AssignDiv.    AssignOp ::= "/=" ;
+AssignAdd.    AssignOp ::= "+=" ;
+AssignSub.    AssignOp ::= "-=" ;
+AssignAnd.    AssignOp ::= "&=" ;
+AssignOr.     AssignOp ::= "|=" ;
+
+IterInc. IterOp ::= "++" ;
+IterDec. IterOp ::= "--" ;
+
+
+-- DECLARATIONS
+
+terminator Decl ";" ;
+separator Param "," ;
+
+TBool.  TypeSpec  ::= "bool" ;
+TInt.   TypeSpec  ::= "int" ;
+PVar.   ParamSpec ::= "var" ;
+PVal.   ParamSpec ::= "val" ;
+
+ExpArg. Arg ::= Exp ; 
+
+ParamDecl. Param ::= ParamSpec TypeSpec Ident ;
+
+VarDecl.  Decl ::= "var" TypeSpec Ident ;
+ProcDecl. Decl ::= "proc" Ident "(" [Param] ")" Block ;
+
+-- BLOCK
+
+ScopeBlock. Block ::= [Decl] Stmt ;
