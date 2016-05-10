@@ -11,8 +11,9 @@ Some of the more notable language features include:
 * procedures with arguments passed by value and by name
 * full identifier shadowing, including Pascal-like nested procedure declarations
 * several helpful operators borrowed from C like `+=` and `++`
+* built-in `print` statement
 
-Examples demonstrating the language and interpreter capabilities can be found in `good` and `bad` directories
+Examples demonstrating the language and interpreter capabilities can be found in `good` and `bad` directories.
 
 ## Notes about the interpreter output
 
