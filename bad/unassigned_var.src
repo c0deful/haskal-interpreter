@@ -1,0 +1,5 @@
+/* unassigned variable example */
+var int x;
+{
+	x += 1;
+}

@@ -1,0 +1,13 @@
+/* wrong args count example */
+proc p (var int x, var int y)
+{
+	x += 3;
+	y -= 3;
+};
+var int a;
+var int b;
+{
+	a = 2;
+	b = 4;
+	p(a, b, 1);
+}

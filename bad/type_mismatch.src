@@ -1,0 +1,9 @@
+/* type mismatch example */
+
+var int x;
+var bool y;
+{
+	x = 7;
+	y = False;
+	x *= y;
+}

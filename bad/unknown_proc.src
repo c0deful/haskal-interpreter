@@ -1,0 +1,4 @@
+/* unknown procedure identifier example */
+{
+	x();
+}

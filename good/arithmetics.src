@@ -1,0 +1,15 @@
+/* some arithmetics, operator precedence and allowed usage of semicolons */
+
+var int x;
+var int y;
+var bool b;
+{
+	x = 9;
+	y = 8;
+	b = True;
+	if ((x + y) / 2 * 2 == x + y) {
+		b = True
+	} else
+		b = False;
+	print b
+}

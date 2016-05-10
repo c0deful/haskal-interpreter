@@ -1,0 +1,5 @@
+/* division by zero example */
+var int x;
+{
+	x = 5 / 0;
+}

@@ -1,0 +1,30 @@
+/* print first n fibonacci numbers
+
+the code is designed to showcase interpreter features,
+therefore it is far from efficient */
+
+proc fibo(val int i, var int ret)
+var int a;
+var int b;
+{
+	if ((i == 0) || (i == 1))
+		ret = 1
+	else {
+		fibo(i - 1, a);
+		fibo(i - 2, b);
+		ret = a + b;
+	}
+}; // this semicolon is required (signifies an end of procedure declaration)
+
+var int ans;
+var int n;
+var int i;
+{
+	n = 20;
+	i = 0;
+	while (i < n) {
+		fibo(i, ans);
+		print ans;
+		i++;
+	}
+}

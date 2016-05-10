@@ -1,0 +1,17 @@
+/* variable and procedure shadowing example */
+proc x(var int y)
+	var int x;
+	proc x(var int x)
+	{
+		x++;
+	};
+{
+	x = 1;
+	x(y);
+	print y;
+};
+var int y;
+{
+	y = 7;
+	x(y);
+}
