@@ -4,6 +4,7 @@ This is a project for Programming Languages and Paradigms course held in 2016 at
 
 The interpreter accepts programs in simple Pascal-inspired language (codenamed Haskal).
 
+
 ## Haskal language
 
 Some of the more notable language features include:
@@ -14,6 +15,25 @@ Some of the more notable language features include:
 * built-in `print` statement
 
 Examples demonstrating the language and interpreter capabilities can be found in `good` and `bad` directories.
+
+
+## Requirements
+* ghc
+* happy
+* alex
+
+
+## Building the interpreter
+
+Just call `make`.
+
+
+## Using the interpreter
+
+The interpreter can run code from a file on path passed as the first argument or, if no arguments are present, from standard input.
+
+The interpreter can be launched via `./interpreter`.
+
 
 ## Notes about the interpreter output
 
