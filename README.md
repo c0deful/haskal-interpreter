@@ -7,7 +7,7 @@ The interpreter accepts programs in simple Pascal-inspired language (codenamed H
 ## Haskal language
 
 Some of the more notable language features include:
-* two value types: int and bool
+* two value types: `int` and `bool`
 * procedures with arguments passed by value and by name
 * full identifier shadowing, including Pascal-like nested procedure declarations
 * several helpful operators borrowed from C like `+=` and `++`
